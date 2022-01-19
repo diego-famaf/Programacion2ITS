@@ -1,0 +1,44 @@
+class Rectangulo():
+    """ Esta clase modela un rectángulo en el plano. """
+    base = 0
+    altura = 0
+    origen = Punto()
+
+    def __init__(self, base, altura, origen = Punto()):
+        """ base (número) es la longitud de su base,
+            altura (número) es la longitud de su base,
+            origen (Punto) es el punto del plano de su esquina
+            inferior izquierda. """
+        self.base = base
+        self.altura = altura
+        self.origen = origen
+
+    def trasladar(self, dx = 0, dy = 0):
+        self.origen.mover(dx,dy)
+
+    def area(self):
+        return self.base * self.altura
+
+    def __str__(self):
+        """ muestra el rectángulo """
+        return "Base: {}, Altura: {}, Esquina inf. izq.: {} ".format (
+            self.base, 
+            self.altura, 
+            self.origen)
+
+    def __eq__(self,otro):
+        return ((self.base == otro.base) 
+            and (self.altura == otro.altura) 
+            and (self.origen==otro.origen))
+
+    def perimetro(self):
+        return (self.base*2)+ (self.altura*2)
+
+
+c = Rectangulo (4,4)
+print (c)
+print(c.area())
+p1 =  Punto(2,3)
+r = Rectangulo (3,8, p1) 
+print(r)
+print(r.area())

@@ -1,0 +1,75 @@
+temas principales
+
+Libertad del humano
+condiciones de libertad
+---------
+Vivir no es solo estar sino una accion,muy activa,que merece
+nuestra atencion,esto quiere decir; ser conciente de uno mismo como del entorno
+con el cual interactuamos,y este entorno muchas veces no llega a ser como se ve a primera vista
+,hay tantas formas de ver el mundo como personas viviendo en el,asi que en cuanto a lo que nos puede parecer bueno o malo es relativo.Otra cuestion es como vivir, aqui tambien hay muchas diferencias en como debe vivir el individuo,pero en lo que si hay mas coincidencia es en el hecho de que todo esto depende pura y exclusivamente de las desiciones que cada uno realice,y esto ultimo es un punto importante relacionado al punto importante anterior,la etica.Lo que da sentido a las deciciones y la libertad de cada uno es que por esas cualidades podemos tener etica.
+
+
+sqlserver2012
+
+
+quitar repeticiones porque tengo elementos repetidos en el indice
+
+def indice_elemento(l,e):
+	for i in range(len(l)):
+		if l[i] == e:
+		   return i
+
+
+	    primero = 0
+	    ultimo = len(unaLista)-1
+	    encontrado = False
+	
+	    while primero<=ultimo and not encontrado:
+	        puntoMedio = (primero + ultimo)//2
+	        if unaLista[puntoMedio] == item:
+	            encontrado = True
+	        else:
+	            if item < unaLista[puntoMedio]:
+	                ultimo = puntoMedio-1
+	            else:
+	                primero = puntoMedio+1
+	
+	    return encontrado
+
+
+
+---------------
+devolver_indice(version 1)
+ lista_nueva = MulticonjuntoOrdenado()
+        
+        
+        for i in self.datos:
+            if self.repeticiones_e(i)>=1 and not (lista_nueva.existe(i)):
+                lista_nueva.agregar(i)
+                    
+        for i in range(lista_nueva.tamanio()):
+            if lista_nueva[i] == elem:
+                return
+-----------------------------------
+version que funciona
+for i in self.datos:
+            if self.repeticiones_e(i)>=1 and not (i in lista_nueva):
+                lista_nueva.append(i)
+                    
+for i in range(len(lista_nueva)):
+            if lista_nueva[i] == elem:
+                return i
+
+--------------------
+para tener una idea de como eliminar repetidos:
+def eliminar_repetidos(lista):
+nueva=[]
+for elemento in lista:
+if not elemento in nueva:
+nueva.append(elemento)
+return nueva
+
+UnaLista = [1, 3, 5, 3, 2, 5, 4, 7, 5, 7, 8, 2, 3]
+print(UnaLista)
+UnaLista=eliminar_repetidos(UnaLista)
+print(UnaLista)
